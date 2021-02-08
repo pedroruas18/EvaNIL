@@ -6,11 +6,11 @@ Built from existing Biomedical and Life Sciences corpora.
 
 ## Setup environment
 
-Dockerfile includes necessary commands to setup a Docker image with the appropriate environment.
+Dockerfile includes the commands to setup a Docker image with the appropriate environment.
 
 
-## Get necessary data
-Download the required knowledge base and corpora files:
+## Retrieve necessary data
+To download the required knowledge base and corpora files:
 
 ```
 ./download_data.sh
@@ -19,12 +19,22 @@ Download the required knowledge base and corpora files:
 
 ## Build the dataset
 
+To build a given partition of the dataset:
+
 ```
 python src/dataset <partition>
 ```
 
 Arg
-- partition: "medic" (CTD-MEDIC), "ctd_anatomy" (CTD-Anatomy), "ctd_chemicals" (CTD-Chemicals, "chebi" (ChEBI), "go_bp" (GO-Biological Process) or "hp" (HPO)
+- partition: the selected partition to build.
+
+Options:
+- "medic" (CTD-MEDIC)
+- "ctd_anatomy" (CTD-Anatomy)
+- "ctd_chemicals" (CTD-Chemicals)
+- "chebi" (ChEBI)
+- "go_bp" (GO-Biological Process)
+- "hp" (HPO)
 
 Example:
 
@@ -42,7 +52,15 @@ python src/statistics.py <partition>
 ```
 
 Arg
-- partition: "medic" (CTD-MEDIC), "ctd_anatomy" (CTD-Anatomy), "ctd_chemicals" (CTD-Chemicals, "chebi" (ChEBI), "go_bp" (GO-Biological Process), "hp" (HPO) or "all"
+- partition: the selected partition to build.
+
+Options:
+- "medic" (CTD-MEDIC)
+- "ctd_anatomy" (CTD-Anatomy)
+- "ctd_chemicals" (CTD-Chemicals)
+- "chebi" (ChEBI)
+- "go_bp" (GO-Biological Process)
+- "hp" (HPO)
 
 Example:
 ```
@@ -65,13 +83,24 @@ Min number of annotations per document: 2
 
 
 ## Baseline model
-Baseline model is based on string matching that uses python (fuzzywuzzy)[https://pypi.org/project/fuzzywuzzy/].
+The baseline model is based on string matching and uses python [fuzzywuzzy](https://pypi.org/project/fuzzywuzzy/).
 
-To apply baseline model over ChEBI partition of EvaNIL dataset:
+To apply the baseline model over the built dataset:
 
 ```
 python src/baseline.py <partition>
 ```
+Arg
+- partition: the selected partition to build.
+
+Options:
+- "medic" (CTD-MEDIC)
+- "ctd_anatomy" (CTD-Anatomy)
+- "ctd_chemicals" (CTD-Chemicals)
+- "chebi" (ChEBI)
+- "go_bp" (GO-Biological Process)
+- "hp" (HPO)
+- "all"
 
 Example:
 ```
@@ -89,8 +118,7 @@ Partition runtime: 114.79057455062866 s
 Total runtime: 114.79064726829529 s
 ```
 
-Predicted answer for annotations are outputted in the file "baseline_chebi_answers.csv" in ./results dir
-
+Predicted answers for the annotations are outputted in the file "baseline_chebi_answers.csv" in ./results dir
 
 
 To apply baseline model over all partitions of EvaNIL dataset:
