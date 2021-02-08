@@ -3,7 +3,7 @@ Silver standard dataset for large-scale NIL entity linking evaluation.
 
 Built from existing Biomedical and Life Sciences corpora.
 
-![Dataset generation schema](https://github.com/pedroruas18/EvaNIL/blob/main/images/evaNIL.pdf)
+![Dataset generation schema](https://github.com/pedroruas18/EvaNIL/blob/main/evaNIL.png)
 
 ## Setup environment
 
@@ -127,4 +127,3 @@ To apply baseline model over all partitions of EvaNIL dataset:
 ```
 python3 src/baseline.py all
 ```
-
