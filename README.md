@@ -3,6 +3,7 @@ Silver standard dataset for large-scale NIL entity linking evaluation.
 
 Built from existing Biomedical and Life Sciences corpora.
 
+![Dataset generation schema](https://github.com/pedroruas18/EvaNIL/blob/main/images/evaNIL.pdf)
 
 ## Setup environment
 
