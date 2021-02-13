@@ -1,9 +1,9 @@
-,MEDIC,CTD-Anatomy,CTD-Chemicals,ChEBI,GO-BP,HPO,Total,%	
-Total number of documents,1970491,1901856,2667067,97,97,3173,6542781	
-Total number of annotations,5027511,4266459,8104780,4091,10636,13741,17427218	
-Annotations per document,2.66357960017308	
-Max number of annotations per document,44,47,104,315,488,52,488	
-Min number of annotations per document,1,1,1,2,4,1,1
+,MEDIC,CTD-Anatomy,CTD-Chemicals,ChEBI,GO-BP,HPO,Total,%
+Total number of documents,1970491,1901856,2667067,97,97,3173,6542781,-
+Total number of annotations,5027511,4266459,8104780,4091,10636,13741,17427218,-
+Annotations per document,2.66357960017308,2.2433133738832,3.03883629470126,42.1752577319588,109.649484536082,4.33060195398676,2.66357960017308,-
+Max number of annotations per document,44,47,104,315,488,52,488,-
+Min number of annotations per document,1,1,1,2,4,1,1,-
 annotations with 1 word,3433332,2931315,6927127,3699,8018,8503,13311994,76.3862252712969
 annotations with 2 words,1383575,1243469,1028406,327,1664,2664,3660105,21.0022334029447
  Annotations with 3 words,192508,87760,127631,51,441,801,409192,2.34800528690236
