@@ -38,16 +38,16 @@ def parse_PBDMS_doc(kb_data, doc_dict):
 
     doc_dict_up = json.loads(doc_dict)
     doc_id = doc_dict_up["_id"]
-              
+    
     if len(doc_dict_up['mentions']) > 0: #current doc will be present in the final dataset   
         output_PBDMS = [doc_id] 
 
         for mention in doc_dict_up['mentions']:
-            mesh_id = "MESH:" + mention['mesh_id'] 
+            mesh_id = mention['mesh_id'] 
                                                     
             if mesh_id in kb_data.child_to_parent.keys():
-                direct_ancestor = kb_data.child_to_parent[mesh_id].strip("MESH:")
-                update_mesh_id =  mesh_id.strip("MESH:")
+                direct_ancestor = "MESH:" + kb_data.child_to_parent[mesh_id].strip("MESH:")
+                update_mesh_id =  "MESH:" + mesh_id
                 annotation = (mention['mention'], mention['start_offset'], mention['end_offset'], 
                                                     update_mesh_id, direct_ancestor)
                 output_PBDMS.append(annotation)
@@ -72,7 +72,7 @@ def structure_PBDMS_annotations(documents, kb_data):
     doc_annotations = list()
     partial_func = partial(parse_PBDMS_doc, kb_data)
         
-    with multiprocessing.Pool(processes=20) as pool:
+    with multiprocessing.Pool(processes=10) as pool:
         doc_annotations = pool.map(partial_func, documents)
     
     return doc_annotations
@@ -331,6 +331,7 @@ def parse_annotations(kb, split):
                 input_split.close()
             
             doc_annotations = structure_PBDMS_annotations(documents, kb_data)
+            
             output_PBDMS = convert_PBDMS_into_dict(doc_annotations)
             
 

@@ -50,10 +50,10 @@ def build_partition(annotations, partition, split):
     """
     
     if split != "":
-        partition_dir = "./dataset/" + partition + "/split_" + split + "/"
+        partition_dir = "./evanil/" + partition + "/split_" + split + "/"
     
     else:
-        partition_dir = "./dataset/" + partition+ "/"    
+        partition_dir = "./evanil/" + partition+ "/"    
 
     if not os.path.exists(partition_dir):
         os.makedirs(partition_dir)

@@ -65,7 +65,6 @@ class KnowledgeBase:
                     if kb == "medic":
 
                         if node_id[0:4] != "OMIM": #exclude OMIM concepts
-                            node_id = node_id.strip("MESH:")
                             name_to_id[node_name] = node_id
                     
                     else:
@@ -114,7 +113,7 @@ class KnowledgeBase:
                 
                 if row_count >= 30:
                     node_name = row[0] 
-                    node_id = row[1][5:] # "MESH:" + 
+                    node_id = row[1][5:]
                     node_parents = row[4].split('|')
                     synonyms = row[7].split('|')
                     name_to_id[node_name] = node_id

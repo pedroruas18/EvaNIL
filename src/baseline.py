@@ -33,7 +33,7 @@ def find_best_candidate(kb_data, annotation):
 
     else:
         top_candidate_id = top_candidate_id_1    
-
+    
     return (annotation, top_candidate_id)
 
 
@@ -111,8 +111,8 @@ def baseline_model(partition):
         partitions = [partition]
     
     else:
-        #partitions = ["hp", "chebi", "go_bp", "medic", "ctd_anatomy", "ctd_chemicals"]
-        partitions = ["medic", "ctd_anatomy", "ctd_chemicals"]
+        partitions = ["hp", "chebi", "go_bp", "medic", "ctd_anatomy", "ctd_chemicals"]
+        
     for partition in partitions:
         kb_data = KnowledgeBase(partition)
         part_annotations = retrieve_annotations(partition, test=True) #get annotations only from test set
@@ -137,7 +137,7 @@ def baseline_model(partition):
         
         partial_func = partial(find_best_candidate, kb_data)
         
-        with multiprocessing.Pool(processes=15) as pool:
+        with multiprocessing.Pool(processes=20) as pool:
             top_candidates = pool.map(partial_func, valid_annotations)
 
         correct_answers_partition_count, annotations_partition_count, \
