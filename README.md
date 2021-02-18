@@ -23,7 +23,7 @@ To download the required knowledge base and corpora files:
 To build a given partition of the dataset:
 
 ```
-python src/dataset <partition>
+python src/dataset.py <partition>
 ```
 
 Arg
@@ -40,7 +40,7 @@ Options:
 Example:
 
 ```
-python src/dataset chebi
+python src/dataset.py chebi
 ```
 
 Output: train.json, dev.json and test.json in ./dataset/chebi dir
