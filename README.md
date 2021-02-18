@@ -45,6 +45,8 @@ python src/dataset.py chebi
 
 Output: train.json, dev.json and test.json in ./dataset/chebi dir
 
+See [sample file](https://github.com/pedroruas18/EvaNIL/blob/main/sample.json).
+
 ## Statistics
 
 To get dataset statistics:
@@ -82,6 +84,7 @@ Min number of annotations per document: 2
 2 annotations (0.048887802493277926 %) with 5 or more words
 ```
 
+See [statistics for the entire dataset](https://github.com/pedroruas18/EvaNIL/blob/main/stats.csv).
 
 ## Baseline model
 The baseline model is based on string matching and uses python [fuzzywuzzy](https://pypi.org/project/fuzzywuzzy/).
@@ -127,6 +130,7 @@ To apply baseline model over all partitions of EvaNIL dataset:
 ```
 python3 src/baseline.py all
 ```
+See [results for the entire dataset](https://github.com/pedroruas18/EvaNIL/blob/main/baseline_results.csv).
 
 ## Python Multiprocessing
 The functions used to parse documents from the PubMed DS corpus and to find the best candidate in the baseline model were adapted to allow parallel processing using the Pool class from [Python Multiprocessing package](https://docs.python.org/3/library/multiprocessing.html). 
