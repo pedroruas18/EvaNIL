@@ -40,10 +40,10 @@ Options:
 Example:
 
 ```
-python src/dataset.py chebi
+python src/dataset.py hp
 ```
 
-Output: train.json, dev.json and test.json in ./dataset/chebi dir
+Output: train.json, dev.json and test.json in ./evanil/hp dir
 
 See [sample file](https://github.com/pedroruas18/EvaNIL/blob/main/sample.json).
 
@@ -67,21 +67,21 @@ Options:
 
 Example:
 ```
-python src/statistics.py chebi
+python src/statistics.py hp
 ```
 
 Output:
 ```
-Total number of documents: 97
-Total number of annotations: 4091
-Annotations per document: 42.175257731958766
-Max number of annotations per document: 315
-Min number of annotations per document: 2
-3699 annotations (90.41799071131753 %) with 1 word
-327 annotations (7.993155707650941 %) with 2 words
-51 annotations (1.246638963578587 %) with 3 words
-11 annotations (0.2688829137130286 %) with 4 words
-2 annotations (0.048887802493277926 %) with 5 or more words
+Total number of documents: 3173
+Total number of annotations: 13741
+Annotations per document: 4.330601953986763
+Max number of annotations per document: 52
+Min number of annotations per document: 1
+8503 annotations (61.880503602357905 %) with 1 word
+2664 annotations (19.387235281275018 %) with 2 words
+801 annotations (5.829270067680663 %) with 3 words
+155 annotations (1.1280110617858963 %) with 4 words
+38 annotations (0.27654464740557455 %) with 5 or more words
 ```
 
 See [statistics for the entire dataset](https://github.com/pedroruas18/EvaNIL/blob/main/stats.csv).
@@ -108,21 +108,21 @@ Options:
 
 Example:
 ```
-python src/baseline.py chebi
+python src/baseline.py hp
 ```
 Output:
 ```
-Total docs ( chebi ): 10
-Total annotations ( chebi ): 358
-Correct answers: 13
-Accuracy ( chebi ): 3.6312849162011176
+Total docs ( hp ): 314 
+Total annotations ( hp ): 1270 
+Correct answers: 18 
+Accuracy ( hp ): 1.4173228346456692
 
-Partition runtime: 114.79057455062866 s
+Partition runtime: 31.075466632843018 s
 
-Total runtime: 114.79064726829529 s
+Total runtime: 31.075491189956665 s
 ```
 
-Predicted answers for the annotations are outputted in the file "baseline_chebi_answers.csv" in ./results dir
+Predicted answers for the annotations are outputted in the file "baseline_hp_answers.csv".
 
 
 To apply baseline model over all partitions of EvaNIL dataset:
