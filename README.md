@@ -127,3 +127,11 @@ To apply baseline model over all partitions of EvaNIL dataset:
 ```
 python3 src/baseline.py all
 ```
+
+## Python Multiprocessing
+The functions used to parse documents from the PubMed DS corpus and to find the best candidate in the baseline model were adapted to allow parallel processing using the Pool class from [Python Multiprocessing package](https://docs.python.org/3/library/multiprocessing.html). 
+
+For example, the task of finding the best candidate in the knowledge base for all entities followed a map-reduce architecture: the input was distributed to 20 cores and then the output was collected, being returned in a list. In the graph, we can observe the runtime of original baseline model vs the implementation using Multiprocess when applied to the test set of the split 1 of MEDIC partition:
+
+![runtime](https://github.com/pedroruas18/EvaNIL/blob/main/chart.pdf)
+
